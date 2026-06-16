@@ -1,6 +1,7 @@
 import React from 'react';
 import { Sparkles, Trophy, Settings, Hammer, Globe, Heart } from 'lucide-react';
 import WhatsAppButton from '@/components/ui/WhatsAppButton';
+import AboutVideo from '@/components/ui/AboutVideo';
 
 export const metadata = {
   title: 'Our Story | Jeet Furniture Mart',
@@ -48,18 +49,8 @@ export default function AboutPage() {
         </div>
 
         {/* Factory Tour Ambient Video */}
-        <div className="mb-12 rounded-xl overflow-hidden shadow-sm relative border border-[#E0DDD8] bg-stone-900 flex justify-center">
-          <video
-            className="w-full h-[60vh] md:h-[500px] object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-            controls
-          >
-            <source src="/assets/About%20us%20Video.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+        <div className="mb-12 rounded-xl overflow-hidden shadow-sm relative border border-[#E0DDD8] bg-stone-900 flex justify-center w-full">
+          <AboutVideo />
         </div>
 
         {/* Brand Narrative */}

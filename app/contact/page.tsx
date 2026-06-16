@@ -70,6 +70,21 @@ export default function ContactPage() {
           </div>
         </div>
 
+        {/* Map Location */}
+        <div className="w-full mb-12 border border-[#E0DDD8] bg-white shadow-sm overflow-hidden h-[450px]">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d953482.2261139976!2d72.5255663640351!3d21.01107082921855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be05dc25f0bc2a9%3A0xeab7024456f97625!2sJeet%20Furniture%20Mart!5e0!3m2!1sen!2sin!4v1781642731036!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Jeet Furniture Mart Showroom Location"
+            className="w-full h-full"
+          />
+        </div>
+
         {/* Quick Contact Form/Action */}
         <div className="bg-[#1C1C1E] text-white border border-gold-accent/40 p-8 md:p-12 text-center shadow-lg">
           <span className="text-[9px] uppercase tracking-[0.25em] text-[#C9A84C] font-semibold">
