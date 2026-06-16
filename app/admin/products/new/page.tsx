@@ -10,6 +10,7 @@ export default function NewProductPage() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [loadingStatus, setLoadingStatus] = useState('');
+  const [customId, setCustomId] = useState('');
   const [isPending, startTransition] = useTransition();
   const [imageFile, setImageFile] = useState<File | null>(null);
   
@@ -21,6 +22,21 @@ export default function NewProductPage() {
     dimensions: '',
     featured: false,
   });
+
+  React.useEffect(() => {
+    const fetchNextId = async () => {
+      try {
+        const res = await fetch(`/api/admin/products/next-id?category=${formData.category}`);
+        if (res.ok) {
+          const data = await res.json();
+          setCustomId(data.nextId);
+        }
+      } catch (err) {
+        console.error('Failed to fetch next ID:', err);
+      }
+    };
+    fetchNextId();
+  }, [formData.category]);
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
@@ -67,6 +83,7 @@ export default function NewProductPage() {
         body: JSON.stringify({ 
           ...formData, 
           dimensions: formData.dimensions,
+          customId,
           assetId 
         }),
       });
@@ -112,7 +129,7 @@ export default function NewProductPage() {
         
         {/* Basic Info */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="space-y-2">
+          <div className="space-y-2 md:col-span-2">
             <label className="block text-xs font-sans uppercase tracking-widest text-stone-500 font-bold">Product Name *</label>
             <input
               required
@@ -120,6 +137,15 @@ export default function NewProductPage() {
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               className="w-full px-3 py-2 border border-[#E0DDD8] focus:outline-none focus:ring-1 focus:ring-gold-accent focus:border-gold-accent"
+            />
+          </div>
+          <div className="space-y-2">
+            <label className="block text-xs font-sans uppercase tracking-widest text-stone-500 font-bold">Product ID (Auto)</label>
+            <input
+              type="text"
+              readOnly
+              value={customId || 'Generating...'}
+              className="w-full px-3 py-2 border border-[#E0DDD8] bg-stone-50 text-stone-500 focus:outline-none font-bold"
             />
           </div>
           <div className="space-y-2">

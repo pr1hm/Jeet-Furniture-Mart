@@ -41,6 +41,13 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'customId',
+      title: 'Product ID',
+      type: 'string',
+      description: 'Automatically generated ID (e.g. MS001)',
+      readOnly: true,
+    }),
+    defineField({
       name: 'category',
       title: 'Category',
       type: 'string',

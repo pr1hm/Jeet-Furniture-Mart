@@ -47,6 +47,21 @@ export default function AboutPage() {
           ))}
         </div>
 
+        {/* Factory Tour Ambient Video */}
+        <div className="mb-12 rounded-xl overflow-hidden shadow-sm relative border border-[#E0DDD8] bg-stone-900 flex justify-center">
+          <video
+            className="w-full h-[60vh] md:h-[500px] object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            controls
+          >
+            <source src="/assets/About%20us%20Video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
         {/* Brand Narrative */}
         <div className="bg-white border border-[#E0DDD8] p-8 md:p-12 space-y-10 shadow-xs rounded-xl">
           <div className="prose prose-stone max-w-none text-stone-600 text-sm leading-relaxed font-sans space-y-6">

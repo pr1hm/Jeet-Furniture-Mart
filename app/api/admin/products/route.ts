@@ -15,6 +15,7 @@ export async function POST(request: NextRequest) {
       _type: 'product',
       name: body.name,
       slug: { _type: 'slug', current: slug },
+      customId: body.customId,
       category: body.category,
       // themeZone is auto-derived or left default
       themeZone: 'modern',

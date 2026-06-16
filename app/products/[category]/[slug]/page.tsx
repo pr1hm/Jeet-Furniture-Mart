@@ -226,6 +226,7 @@ export default async function ProductDetailPage({
                 </p>
                 <WhatsAppButton
                   productId={product._id}
+                  customId={product.customId}
                   productName={product.name}
                   category={product.category}
                   themeZone={zone}

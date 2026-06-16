@@ -4,6 +4,7 @@ import React from 'react';
 
 interface WhatsAppButtonProps {
   productId?: string;
+  customId?: string;
   productName?: string;
   category?: string;
   themeZone?: 'spiritual' | 'modern' | 'artistic';
@@ -12,6 +13,7 @@ interface WhatsAppButtonProps {
 
 export default function WhatsAppButton({
   productId,
+  customId,
   productName,
   category,
   themeZone = 'modern',
@@ -48,7 +50,8 @@ export default function WhatsAppButton({
   
   let text = 'Hi, I have a general inquiry about your furniture.';
   if (isProductInquiry) {
-    text = `Hi, I'm interested in ${productName}.\nHere is the product page: ${currentUrl}\nProduct ID: ${productId}`;
+    const displayId = customId ? customId : productId;
+    text = `Hi, I'm interested in ${productName}.\nHere is the product page: ${currentUrl}\nProduct ID: ${displayId}`;
   }
 
   const encodedText = encodeURIComponent(text);
