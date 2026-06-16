@@ -8,7 +8,7 @@ export default defineConfig({
   name: 'default',
   title: 'Jeet Furniture Mart Studio',
 
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'dummy-project-id',
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'kquifbiv',
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
 
   basePath: '/studio',

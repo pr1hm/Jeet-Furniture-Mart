@@ -2,7 +2,7 @@ import { createClient } from '@sanity/client';
 import { createImageUrlBuilder } from '@sanity/image-url';
 
 export const config = {
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'dummy-project-id',
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'kquifbiv',
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
   apiVersion: '2023-05-03',
   useCdn: true, // CDN enabled for read operations
