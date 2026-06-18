@@ -28,7 +28,7 @@ export default function FloatingWhatsAppWidget() {
   if (!mounted) return null;
   if (pathname?.startsWith('/admin')) return null;
 
-  const waNumber = process.env.NEXT_PUBLIC_BUSINESS_WA_NUMBER || '917862800530';
+  const waNumber = process.env.NEXT_PUBLIC_BUSINESS_WA_NUMBER || '919879061733';
   const text = 'Hi, I have a general inquiry about your furniture.';
   const href = `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
 

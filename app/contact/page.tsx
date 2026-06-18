@@ -97,10 +97,16 @@ export default function ContactPage() {
             Click the button below to initiate a chat with us on WhatsApp. You can share your design inspirations, dimension requirements, or get price estimations.
           </p>
 
-          <div className="flex flex-col items-center justify-center gap-6 text-xs text-stone-300">
+          <div className="flex flex-col items-center justify-center gap-4 text-xs text-stone-300">
             <div className="flex items-center space-x-2">
               <Phone className="w-4 h-4 text-[#C9A84C]" />
+              <span className="font-bold text-white">+91 98790 61733</span>
+              <span className="text-[10px] text-stone-400 font-light">(Primary)</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Phone className="w-4 h-4 text-stone-500" />
               <span>+91 78628 00530</span>
+              <span className="text-[10px] text-stone-500 font-light">(Secondary)</span>
             </div>
           </div>
 
